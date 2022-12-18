@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>请求报文与响应报文</title>
+</head>
+<body>
+<script>
+	/**
+	 *  1.HTTP : 网络传输协议
+	 *    协议 ： 约定 数据传输格式
+	 * 	2.HTTP协议组成部分
+	 * 		2.1 请求报文
+	 * 	  2.2 响应报文
+	 * 	3. 请求报文三个组成部分
+	 * 		! 3.1 请求行 ： 包含请求方法, URL, 协议版本
+	 * 		! 3.2 请求头 ： 浏览器告诉服务器，我给的数据是什么格式 （content-type在请求头中）
+	 * 		! 3.3 请求体 ： 请求参数
+	 * 	4. 响应报文三个组成部分
+	 * 		4.1 响应行 ： 包含协议版本, 状态码, 状态码描述
+	 *        1开头 ： 指示信息, 表示请求已接收, 继续处理
+	 * 		  ! 2开头 ： 请求成功  200
+	 * 			  3开头 ： 重定向(服务器主动修改浏览器网址)  302
+	 * 			! 4开头 ： 前端问题  400参数错误   401 没有权限  404 url错误
+	 * 			! 5开头 ： 后台问题  500 服务器bug,可以理解为后台java代码爆红
+	 * 		4.2 响应头 ： 浏览器告诉服务器，我给你的数据是什么格式 （浏览器会自动识别）
+	 * 		4.3 响应体 ： 后台响应的数据，一般是json格式
+	 * 5.ajax原理： 设置http请求报文的过程
+	 */
+					//(1).实例化ajax对象
+	const xhr = new XMLHttpRequest()
+	//(2).设置请求方法和地址
+	xhr.open('post', 'http://www.liulongbin.top:3009/api/login')
+	//(3).设置请求头（post请求才需要设置）
+	xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+	//(4).发送请求
+	xhr.send('username=admin&password=123456')
+	//(5).注册回调函数
+	xhr.onload = function () {
+		if (xhr.readyState === 4) {
+			console.log(xhr.responseText)
+		}
+	}
+</script>
+</body>
+</html>

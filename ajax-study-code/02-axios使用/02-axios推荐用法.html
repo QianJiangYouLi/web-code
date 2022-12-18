@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>axios推荐用法</title>
+</head>
+<body>
+<button class="btn1">点我发送get请求</button>
+<button class="btn2">点我发送post请求</button>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/1.0.0-alpha.1/axios.js"></script>
+<script>
+	// axios推荐写法
+	/**
+	 * axios({
+	 * 	method:'请求方式',
+	 * 	url:'请求地址',
+	 * 	data:{post参数},
+	 * 	params:{get参数}
+	 * }).then()
+	 */
+	document.querySelector('.btn1').addEventListener('click', function () {
+		axios({
+			method: 'get',
+			url: 'https://autumnfish.cn/api/joke/list',
+			params: {num: 5}
+		}).then(res => console.log(res))
+	})
+	document.querySelector('.btn2').addEventListener('click', function () {
+		axios({
+			method: 'post',
+			url: 'http://www.liulongbin.top:3009/api/login',
+			data: {username: 'admin', password: '123456'}
+		}).then(res => console.log(res))
+	})
+</script>
+</body>
+</html>
