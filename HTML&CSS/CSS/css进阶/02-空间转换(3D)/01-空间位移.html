@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>空间位移</title>
+	<style>
+		.box {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			background-color: #00FFFF;
+			transition: all 0.5s;
+		}
+
+		.box:hover {
+			/* ! 3D位移：transform: translate3d(X，Y，Z) 与平面位移语法一样，只是多了Z轴，Z轴位置与视线一致，没有透视，Z轴效果不可见*/
+			/*transform: translate3d(200px, 200px, 200px);*/
+			/*transform: translateX(200px);*/
+			/*transform: translateY(200px);*/
+			transform: translateZ(200px);
+		}
+	</style>
+</head>
+
+<body>
+<div class="box"></div>
+</body>
+
+</html>

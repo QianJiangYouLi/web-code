@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>嵌套的外边距塌陷</title>
+    <style>
+      /* 塌陷现象：坑爹。 解决方式很多：1.给父级加border或者padding*/
+      .father {
+        width: 300px;
+        height: 300px;
+        /* border: 1px solid #000; */
+        background-color: #0ff;
+        /* 2.给父元素添加overflow:hidden */
+        /* overflow: hidden; 推荐*/
+        /* 3.转成行内块。 */
+        /* display: inline-block; */
+      }
+      /* 4.设置浮动 */
+      .son {
+        width: 100px;
+        height: 100px;
+        margin-top: 50px; /*可能有坑爹问题*/
+        background-color: #f0f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son"></div>
+    </div>
+  </body>
+</html>

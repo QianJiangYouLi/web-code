@@ -1,0 +1,10 @@
+.father {
+  width: 10rem;
+  height: 20rem;
+}
+.father .son {
+  width: 5rem;
+  height: 10rem;
+  background-color: #0ff;
+}
+/*# sourceMappingURL=01-体验less.css.map */

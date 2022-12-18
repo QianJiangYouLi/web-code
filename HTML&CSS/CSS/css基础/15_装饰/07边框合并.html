@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>边框合并</title>
+	<style>
+		table,th,td{
+			border: 1px solid #ccc;
+		}
+		table{
+			/*该属性要给table，其他无效*/
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+<table>
+	<tr>
+		<th>姓名</th>
+		<th>年龄</th>
+		<th>性别</th>
+	</tr>
+	<tr>
+		<td>苏白</td>
+		<td>24</td>
+		<td>男</td>
+	</tr>
+	<tr>
+		<td>崔洛恒</td>
+		<td>21</td>
+		<td>男</td>
+	</tr>
+	<tr>
+		<td>苏千</td>
+		<td>8</td>
+		<td>男</td>
+	</tr>
+</table>
+</body>
+</html>

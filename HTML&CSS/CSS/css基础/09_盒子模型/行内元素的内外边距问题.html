@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      /* 行内元素通过margin或者padding改变位置，无法生效 */
+      span {
+        /* 上下无效(垂直) */
+        /* margin: 100px;*/
+        /* padding: 100px; */
+        /* 通过行高解决（不转显示模式） */
+        line-height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <span>span</span>
+    <span>span</span>
+  </body>
+</html>

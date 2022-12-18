@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>font-family</title>
+    <style>
+      p {
+        font-size: 30px;
+        font-weight: 700;
+        font-style: italic;
+        /* 字体可以写多个，没有就按顺序往下找，都没有则按照任意衬线字体或非衬线字体显示 */
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      h1 {
+        font-weight: 400;
+        font-family: '微软雅黑','宋体',serif;
+      }
+      em {
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>这是一个一级标题</h1>
+    <p>这是一个段落</p>
+    <em>这是一个em</em>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>显示模式转换</title>
+    <style>
+      /* 通过display属性的block、inline-block、inline三个属性值可以实现显示模式的转化 */
+      div {
+        /* 转成行内块 */
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: #0ff;
+      }
+      span {
+        /* 转成块 */
+        display: block;
+        width: 200px;
+        height: 200px;
+        background-color: #f0f;
+      }
+    </style>
+  </head>
+  <body>
+    <div>div111</div>
+    <div>div222</div>
+    <!-- 转成行内 -->
+    <div style="display: inline">div333</div>
+    <span>span333</span>
+    <span>span444</span>
+  </body>
+</html>

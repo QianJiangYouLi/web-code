@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>before伪元素</title>
+    <style>
+      /* 伪元素用来创建虚拟标签，默认行内元素，必须有content属性 */
+      div {
+        width: 300px;
+        height: 300px;
+        background-color: #0ff;
+      }
+      /* 在父元素的内容前面添加一个伪元素 */
+      div::before {
+        display: inline-block;
+        content: '老鼠';
+        width: 100px;
+        height: 100px;
+        background-color: #f00;
+      }
+      div::after {
+        display: inline-block;
+        content: '大米';
+        width: 100px;
+        height: 100px;
+        background-color: #ff0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>爱</div>
+  </body>
+</html>

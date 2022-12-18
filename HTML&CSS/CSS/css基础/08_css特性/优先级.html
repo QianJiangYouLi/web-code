@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <title>优先级</title>
+    <style>
+      .box {
+        color: #00f;
+      }
+      /* !important不能给继承加 */
+      div {
+        color: #f00 !important;
+      }
+      body {
+        color: #00ffff;
+      }
+      #box {
+        color: #ffa500;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="box" style="color: #8a2be2">测试优先级</div>
+  </body>
+</html>

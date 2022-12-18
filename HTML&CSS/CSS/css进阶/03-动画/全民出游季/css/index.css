@@ -1,0 +1,105 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	background: url(./../images/f1_1.jpg) no-repeat center 0;
+	background-size: cover;
+}
+
+/*云彩*/
+.cloud img {
+	position: absolute;
+	left: 50%;
+	top: 0;
+}
+
+.cloud img:nth-child(1) {
+	margin-left: -300px;
+	top: 20px;
+	animation: cloud 1s infinite alternate;
+}
+
+.cloud img:nth-child(2) {
+	margin-left: 400px;
+	top: 100px;
+	animation: cloud 1s infinite alternate 0.2s;
+}
+
+.cloud img:nth-child(3) {
+	margin-left: -550px;
+	top: 200px;
+	animation: cloud 1s infinite alternate 0.4s;
+}
+
+/* 云彩动画 */
+@keyframes cloud {
+	to {
+		transform: translateX(20px);
+	}
+}
+
+/*文字*/
+.font img {
+	position: absolute;
+	top: 30%;
+	left: 25%;
+	animation: font 1s;
+}
+
+@keyframes font {
+	to {
+		transform: translateX(20px);
+	}
+}
+
+/*热气球*/
+.san img {
+	position: absolute;
+	top: 25%;
+	left: 20%;
+	animation: san 1s infinite alternate;
+}
+
+@keyframes san {
+	to {
+		transform: translateY(20px);
+	}
+}
+
+/*图标*/
+.icon img {
+	position: absolute;
+	top: 72%;
+}
+
+.icon img:nth-child(1) {
+	left: 18%;
+	animation: icon 1s infinite alternate;
+}
+
+.icon img:nth-child(2) {
+	left: 35%;
+	animation: icon 1s infinite alternate .2s;
+}
+
+.icon img:nth-child(3) {
+	left: 53%;
+	animation: icon 1s infinite alternate;
+}
+
+.icon img:nth-child(4) {
+	left: 70%;
+	animation: icon 1s infinite alternate .2s;
+}
+@keyframes icon {
+	to{
+		transform: translateY(30px);
+	}
+}

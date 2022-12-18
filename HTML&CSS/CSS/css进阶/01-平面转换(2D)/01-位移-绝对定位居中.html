@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绝对定位盒子居中</title>
+	<style>
+		.father {
+			position: relative;
+			margin: 100px auto;
+			width: 500px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+
+		.son {
+			/*绝对定位盒子居中*/
+			position: absolute;
+			left: 50%;
+			top: 50%;
+
+			/*margin-left: -100px;*/
+			/*margin-top: -50px;*/
+
+			/*下面的方式比margin负值更灵活*/
+			transform: translate(-50%, -50%);
+
+			width: 200px;
+			height: 100px;
+			background-color: #F40;
+		}
+	</style>
+</head>
+<body>
+<div class="father">
+	<div class="son"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>精灵动画</title>
+	<style>
+		/*逐帧动画一般会配合精灵图使用*/
+
+		.box {
+			/* 1680/12 */
+
+			/*1、准备显示区域，尺寸是一个小图的尺寸*/
+			width: 140px;
+			height: 140px;
+			background-image: url(./images/bg.png);
+
+			/*3、使用动画 速度曲线是steps(N),N与小图个数相同，添加无限重复效果*/
+			/*多个动画用逗号隔开*/
+			animation: run 1s steps(12) infinite, translate 12s forwards;
+		}
+
+		/*2、定义逐帧动画 改变背景图位置，移动的距离是精灵图的宽度*/
+		@keyframes run {
+			from {
+				background-position: 0 0;
+			}
+			to {
+				background-position: -1680px 0;
+			}
+		}
+
+		@keyframes translate {
+			/*动画的开始状态与盒子的默认样式一样，可以省略开始状体*/
+			/*from {
+				transform: translateX(0);
+			}*/
+			to {
+				transform: translateX(1290px);
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

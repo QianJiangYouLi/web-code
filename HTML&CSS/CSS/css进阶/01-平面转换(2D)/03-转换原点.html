@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transform-origin</title>
+	<style>
+		img {
+			width: 250px;
+			border: 1px solid #000;
+			transition: all 2s;
+			/*转换中心点：transform-origin:方位 方位；（像素坐标，百分比）*/
+			transform-origin: right bottom;
+		}
+
+		img:hover {
+			transform: rotate(360deg);
+		}
+	</style>
+</head>
+<body>
+<img src="images/rotate.png" alt="">
+</body>
+</html>

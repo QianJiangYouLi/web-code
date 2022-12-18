@@ -1,0 +1,10 @@
+.father {
+  width: 100px;
+}
+.father .son {
+  color: #00FF00;
+}
+.father .son:hover {
+  color: #00FFFF;
+}
+/*# sourceMappingURL=04-嵌套.css.map */

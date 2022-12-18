@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆角边框</title>
+	<style>
+		div {
+			margin: 20px auto;
+			width: 200px;
+			height: 200px;
+			background-color: #0FF;
+			/*
+			* 设置圆角边框，常见取值：数字+px，百分比
+			* 赋值规则：左上角开始，顺时针赋值，没有的看对角
+			*/
+			/*border-radius:10px;*/
+			border-radius: 40px 80px;
+			/*border-radius: 10px 40px 80px;*/
+			/*border-radius: 10px 20px 30px 40px;*/
+		}
+		.one{
+			border-radius: 50%; /*正圆*/
+		}
+		.two{
+			width: 300px;
+			height: 200px;
+			background-color: #f0f;
+			/*胶囊型需要长方形盒子，边框半径是盒子高度的一半*/
+			border-radius: 100px;
+		}
+	</style>
+</head>
+<body>
+<div>圆角</div>
+<div class="one">正圆</div>
+<div class="two">胶囊按钮</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐变背景</title>
+	<style>
+		.box {
+			width: 300px;
+			height: 300px;
+			/*现在基本不会这样直接纯色渐变*/
+			/*background-image: linear-gradient(#FFA500, #FF00FF,green);*/
+
+			/*工作用法：透明色过渡到黑色半透明*/
+			background-image: linear-gradient(
+							transparent,
+							rgba(0, 0, 0, .6)
+			);
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

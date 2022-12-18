@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>translate</title>
+	<style>
+		.father {
+			margin: 100px auto;
+			width: 500px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+
+		.son {
+			width: 200px;
+			height: 100px;
+			background-color: #F40;
+			transition: all .5s;
+		}
+
+		.father:hover .son {
+			/*! 位移 transform: translate(水平,垂直)*/
+			/*transform: translate(100px,50px);*/
+			/*! 百分比：盒子自身尺寸的百分比*/
+			/*transform: translate(100%,50%);*/
+			/*transform: translate(-100%, 50%);*/
+			/*! 只给一个值，表示x轴方向*/
+			/*transform: translate(50%);*/
+			/*! 单独设置某个方向：translateX 或者 translateY*/
+			/*transform: translateX(50%);*/
+			transform: translateY(50%);
+		}
+	</style>
+</head>
+<body>
+<div class="father">
+	<div class="son"></div>
+</div>
+</body>
+</html>

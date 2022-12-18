@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rotate</title>
+	<style>
+		img {
+			width: 250px;
+			transition: all 2s;
+		}
+
+		img:hover {
+			/*旋转 transform: rotate(360deg); 单位是deg 旋转要加过渡才能看到效果*/
+			/*负数：逆时针*/
+			transform: rotate(-360deg);
+			/*正数：顺时针*/
+			/*transform: rotate(360deg);*/
+		}
+	</style>
+</head>
+<body>
+<img src="images/rotate.png" alt="">
+</body>
+</html>

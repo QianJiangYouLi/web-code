@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音频视频</title>
+</head>
+<body>
+<!-- 音频 -->
+<audio controls="controls" autoplay="autoplay" loop="loop">
+  <source src="./media/music.mp3" type="audio/mpeg">
+  您的浏览器暂不支持audio标签。
+</audio>
+<!-- 视频 -->
+<video controls autoplay loop>
+  <source src="./media/video.mp4" type="audio/mpeg">
+  您的浏览器暂不支持video标签。
+</video>
+<!-- 引入外部视频，不占用当前网站空间-->
+<iframe
+        src="//player.bilibili.com/player.html?aid=12178417&bvid=BV1Ux411q7qd&cid=20076875&page=1"
+        framespacing="0"
+        allowfullscreen="true"
+>
+</iframe>
+</body>
+</html>

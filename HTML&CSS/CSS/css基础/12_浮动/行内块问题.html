@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>行内块问题</title>
+	<style>
+		div {
+			/*解析行内或者行内块时，标签换行会产生一个空格的间距*/
+			/*多个块级标签一排显示转成行内块显然不是很合适*/
+			/*用浮动来解决这个问题是很好的*/
+			display: inline-block;
+			width: 300px;
+			height: 300px;
+		}
+
+		.one {
+			background-color: #0FF;
+		}
+
+		.two {
+			background-color: #FFA500;
+		}
+	</style>
+</head>
+<body>
+<div class="one"></div>
+<div class="two"></div>
+</body>
+</html>

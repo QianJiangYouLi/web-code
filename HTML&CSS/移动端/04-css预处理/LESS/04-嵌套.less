@@ -1,0 +1,12 @@
+.father {
+	width: 100px;
+
+	.son {
+		color: #00FF00;
+
+		//&表示当前选择器，不会生成后代关系
+		&:hover {
+			color: #00FFFF;
+		}
+	}
+}

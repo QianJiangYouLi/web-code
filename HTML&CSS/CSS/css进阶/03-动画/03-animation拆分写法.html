@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation拆分写法</title>
+	<style>
+		.box {
+			width: 200px;
+			height: 100px;
+			background-color: #0FF;
+
+			/*动画名*/
+			animation-name: change;
+			/*动画时长*/
+			animation-duration: 1s;
+			/*执行次数*/
+			animation-iteration-count: infinite;
+		}
+
+		.box:hover {
+			/*暂停动画*/
+			animation-play-state: paused; /*一般配合hover使用*/
+		}
+
+
+		@keyframes change {
+			from {
+				width: 200px;
+			}
+			to {
+				width: 600px;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

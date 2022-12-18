@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>外边距塌陷</title>
+<style>
+  div{
+    width: 100px;
+    height: 100px;
+  }
+  .one{
+    background-color: #0ff;
+    margin-bottom: 50px;
+  }
+  /* 垂直布局时，上下的外边距会合并，会选择较大的 */
+  /* 解决方法：只给一个盒子设置外边距 */
+  .two{
+    margin-top: 50px;
+    background-color: #f0f;
+  }
+</style>
+</head>
+<body>
+  <div class="one"></div>
+  <div class="two"></div>
+</body>
+</html>

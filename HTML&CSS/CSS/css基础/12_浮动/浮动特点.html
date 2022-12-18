@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浮动特点</title>
+	<style>
+		/*
+		! 浮动元素会脱离文档流，在标准流中不占位置
+		! 浮动元素比标准流高半个级别，可以覆盖标准流中的元素，但能覆盖文字
+		! 浮动找浮动前面的元素浮动，后面的元素也设置浮动，后浮动的会排在先浮动的后面。
+		! 浮动的元素顶部对齐,可以通过外边距调整。
+		! 浮动的元素可以设置宽高，一行可以放多个。（浮动后的元素具有行内块特点）。
+		! 浮动的盒子不能通过margin：0 auto居中。
+	*/
+		.one {
+			float: left;
+			width: 100px;
+			height: 100px;
+			background-color: #0FF;
+		}
+
+		.two {
+			float: left;
+			width: 150px;
+			height: 150px;
+			background-color: #F0F;
+		}
+
+		.three {
+			width: 250px;
+			height: 250px;
+			background-color: #FF7F50;
+		}
+	</style>
+</head>
+<body>
+<div class="one">one</div>
+<div class="two">two</div>
+<div class="three">three</div>
+</body>
+</html>

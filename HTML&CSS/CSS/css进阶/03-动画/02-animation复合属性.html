@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation复合属性</title>
+	<style>
+		.box {
+			width: 200px;
+			height: 100px;
+			background-color: #0FF;
+
+			/*animation: 动画名 时间 速度曲线 延迟时间 重复次数 动画方向 执行完毕时状态; 属性没有顺序，动画名和时长必须有*/
+
+			/*liner匀速不需要写 有两个时间，第一个时间是动画时长，第二个时间是延迟时间*/
+			/*animation: change 2s linear 1s 5 alternate ;*/
+
+			/*steps()分步速度 infinite无限循环 alternate反复执行动画 */
+			/*animation: change 2s steps(3) infinite alternate;*/
+
+			/*执行完毕状态需要去掉无限循环和反复执行  backwards默认值，停留在初始状态  forwards动画停留在结束状态*/
+			/*animation: change 2s backwards;*/
+			animation: change 2s forwards;
+		}
+
+		@keyframes change {
+			from {
+				width: 200px;
+			}
+			to {
+				width: 600px;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

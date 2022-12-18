@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位二维码</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.nav{
+			height: 50px;
+			margin-top: 5px;
+			border: 1px solid #ccc;
+			border-left: 0;
+			border-right: 0;
+		}
+		.nav ul{
+			margin: 0 220px;
+		}
+		.nav li{
+			float: left;
+			padding: 0 60px;
+			height: 50px;
+			border-right: 1px solid #ccc;
+			line-height: 50px;
+			list-style: none;
+			font-size: 12px;
+		}
+		.nav li:last-child{
+			border-right: 0;
+		}
+		.nav li a{
+			text-decoration: none;
+			color: #aaa;
+		}
+		.nav li:nth-child(4){
+			position: relative;
+		}
+		.nav .code{
+			display: none;
+			position: absolute;
+			left: 50%;
+			top: 51px;
+			transform: translate(-50%);
+		}
+		.nav li a:hover img{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<div class="nav">
+	<ul>
+		<li><a href="#">我要投资</a></li>
+		<li><a href="#">平台介绍</a></li>
+		<li><a href="#">新手专区</a></li>
+		<li><a href="#">手机微金所 <img src="./images/code.jpg" alt="" class="code"></a></li>
+		<li><a href="#">个人中心</a></li>
+	</ul>
+</div>
+</body>
+</html>

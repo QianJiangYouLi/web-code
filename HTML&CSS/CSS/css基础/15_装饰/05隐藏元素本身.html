@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素自身隐藏</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+
+		}
+		.one{
+			/*隐藏元素，保留位置，实际上不常用*/
+			/*visibility: hidden;*/
+			/* ? 隐藏元素，不保留位置，常用*/
+			display: none;
+			background-color: #0ff;
+		}
+		.two{
+			background-color: #f0f;
+		}
+	</style>
+</head>
+<body>
+<div class="one"></div>
+<div class="two"></div>
+</body>
+</html>

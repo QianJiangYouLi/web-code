@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过渡</title>
+	<style>
+		/*过渡一般会配合hover使用*/
+		/*谁要过渡给谁加*/
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: #0ff;
+			/*transition: width 1s,height 1s;*/
+			transition: all 1s;
+		}
+		.box:hover{
+			width: 600px;
+			background-color: #f0f;
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

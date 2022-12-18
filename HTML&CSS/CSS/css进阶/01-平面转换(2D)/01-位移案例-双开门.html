@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>双开门</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.box {
+			margin: 0 auto;
+			width: 1000px;
+			height: 600px;
+			background-color: #FF00FF;
+			overflow: hidden;
+		}
+
+		.box::before,
+		.box:after {
+			float: left;
+			content: "";
+			width: 50%;
+			height: 600px;
+			background-color: #FF4400;
+			transition: all .5s;
+		}
+
+		.box::after {
+			background-color: #0FF;
+		}
+
+		.box:hover::before {
+			transform: translateX(-100%);
+		}
+
+		.box:hover::after {
+			transform: translate(100%);
+		}
+	</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
