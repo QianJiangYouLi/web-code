@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>收集表单数据</title>
+  <style>
+      label {
+          display: block;
+          margin-top: 10px;
+          margin-left: 20px;
+      }
+
+      textarea {
+          vertical-align: middle;
+      }
+  </style>
+</head>
+<body>
+<div id="app">
+  <form @submit.prevent="submitForm">
+    <label>姓名：<input type="text" v-model.trim="userInfo.name"></label>
+    <label>年龄：<input type="number" v-model.number="userInfo.age"></label>
+    <label>
+      性别：
+      <input type="radio" name="gender" value="male" v-model="userInfo.gender"> 男
+      <input type="radio" name="gender" value="female" v-model="userInfo.gender"> 女
+    </label>
+    <label>
+      爱好：
+      <input type="checkbox" value="eat" v-model="userInfo.hobbies"> 吃饭
+      <input type="checkbox" value="sleep" v-model="userInfo.hobbies"> 睡觉
+      <input type="checkbox" value="douDou" v-model="userInfo.hobbies"> 打豆豆
+    </label>
+    <label>
+      地区：
+      <select name="region" id="" v-model="userInfo.region">
+        <option value="">请选择所在区域</option>
+        <option value="bj">滨江区</option>
+        <option value="sc">上城区</option>
+        <option value="gs">拱墅区</option>
+        <option value="xs">下沙区</option>
+        <option value="xh">西湖区</option>
+      </select>
+    </label>
+    <label>
+      其它信息：<textarea v-model.lazy="userInfo.other"></textarea>
+    </label>
+    <label>
+      <input type="checkbox" v-model="userInfo.agree"> 阅读并接受 <a href="https://www.wxyyjb99.com">《用户协议》</a>
+    </label>
+   <button>提交</button>
+  </form>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      userInfo: {
+        name: '',
+        age: '',
+        gender: 'male',
+        hobbies: [],
+        region: 'bj',
+        other: '',
+        agree: ''
+      }
+    },
+    methods: {
+      submitForm() {
+        console.log(JSON.stringify(this.userInfo))
+      }
+    }
+  })
+</script>
+</body>
+</html>

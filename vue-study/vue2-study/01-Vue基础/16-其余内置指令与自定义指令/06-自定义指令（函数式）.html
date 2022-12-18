@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>函数式自定义指令</title>
+</head>
+<body>
+<div id="app">
+  <p>当前的n值：<strong v-text="n"></strong></p>
+  <p>放大10倍的n值：<strong v-big="n"></strong></p>
+  <button @click="n++">n+1</button>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      n: 0
+    },
+    directives: {
+      // big调用时机：（1）指令与元素成功绑定时（2）指令所在的模板被重新解析时
+      big(element, binding) {
+        element.innerText = binding.value * 10
+      }
+    }
+  })
+</script>
+</body>
+</html>

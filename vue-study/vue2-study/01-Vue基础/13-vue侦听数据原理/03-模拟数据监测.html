@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>模拟数据监测</title>
+</head>
+<body>
+<script>
+  let data = {
+    name: 'YuHuo',
+    age: 24
+  }
+  // 创建一个监视实例对象，用于监测data中属性变化
+  const obs = new Observer(data)
+
+  console.log(obs)
+
+  const vm = {}
+  vm._data = data = obs
+
+  function Observer(obj) {
+    // 汇总对象中所有属性形成一个数组
+    const keys = Object.keys(obj)
+    keys.forEach(k => {
+      Object.defineProperty(this, k, {
+        get() {
+          return obj[k]
+        },
+        set(v) {
+          console.log(`${k}被改了，重新解析模板，生成虚拟DOM，。。。`)
+          obj[k] = v
+        }
+      })
+    })
+  }
+</script>
+</body>
+</html>

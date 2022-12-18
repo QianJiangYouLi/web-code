@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>格式化日期全局过滤器实现</title>
+</head>
+<body>
+<div id="app">
+  <!--  过滤器实现 -->
+  <p>显示格式化后的时间：<strong>{{time | timeFormater}}</strong></p>
+  <!--  过滤器传参 -->
+  <p>显示格式化后的时间：<strong>{{time | timeFormater('YYYY年MM月DD日')}}</strong></p>
+  <!--  多个过滤器串联 -->
+  <p>显示格式化后的时间：<strong>{{time | timeFormater('YYYY年MM月DD日') | mySlice}}</strong></p>
+</div>
+<script src="../../lib/vue.js"></script>
+<script src="../../lib/day.js"></script>
+<script>
+  // 全局过滤器
+  Vue.filter('mySlice',function (value) {
+    return value.slice(0, 5)
+  })
+  new Vue({
+    el: '#app',
+    data: {
+      time: Date.now()
+    },
+    // 局部过滤器
+    filters: {
+      timeFormater(value, str = 'YYYY年MM月DD日 HH:mm:ss') {
+        return dayjs(this.time).format(str)
+      }
+    }
+  })
+</script>
+</body>
+</html>

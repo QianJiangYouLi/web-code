@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>列表过滤-计算属性实现</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-model="keyWords">
+  <ul>
+    <li v-for="person of filPersons" :key="person.id">
+      {{person.name}}----{{person.age}}------{{person.gender}}
+    </li>
+  </ul>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      persons: [
+        {id: '001', name: '马冬梅', age: 23, gender: '女'},
+        {id: '002', name: '周冬雨', age: 24, gender: '女'},
+        {id: '003', name: '周杰伦', age: 25, gender: '男'},
+        {id: '004', name: '温兆伦', age: 26, gender: '男'}
+      ],
+      keyWords: ''
+    },
+    computed: {
+      filPersons() {
+        return this.persons.filter(person => {
+          return person.name.indexOf(this.keyWords) !== -1
+        })
+      }
+    }
+  })
+</script>
+</body>
+</html>

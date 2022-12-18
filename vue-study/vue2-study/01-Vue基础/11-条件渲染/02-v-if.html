@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>v-if条件渲染</title>
+</head>
+<body>
+<div id="app">
+  <button @click="n++">a++</button>
+  <div v-if="n===1">Angular</div>
+  <div v-else-if="n===2">React</div>
+  <div v-else-if="n===3">Vue</div>
+  <div v-else>条件不符合</div>
+
+  <!--  v-if与template配合,template不会被渲染到页面中-->
+  <template v-if="n===0">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </template>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      n: 0
+    }
+  })
+</script>
+</body>
+</html>

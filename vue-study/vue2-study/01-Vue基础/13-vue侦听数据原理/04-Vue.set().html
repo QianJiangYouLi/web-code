@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.set</title>
+</head>
+<body>
+<div id="app">
+  <p>姓名：{{name}}</p>
+  <p>年龄：{{age}}</p>
+  <p>职位：{{job.position}}</p>
+  <p>性别：{{job.gender}} <button @click="addGender">添加性别</button></p>
+  <p>朋友：</p>
+  <ul>
+    <li v-for="(f,index) of friends" :key="index">{{f.name}}---{{f.age}}</li>
+  </ul>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      name: 'YuHuo',
+      age: 24,
+      job: {
+        position: '前端开发工程师'
+      },
+      friends: [
+        {name: 'Tom', age: 24},
+        {name: 'Tony', age: 26}
+      ]
+    },
+    methods:{
+      addGender(){
+        // Vue.set(this.job, 'gender', '男')
+        this.$set(this.job, 'gender', '男') // 等价
+      }
+    }
+  })
+  // 直接添加属性没有响应式，需要借助API Vue.set
+  // vm.data.job.gender = '男'
+</script>
+</body>
+</html>

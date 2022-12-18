@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>销毁流程</title>
+</head>
+<body>
+<div id="app">
+  <p>当前N值：<strong>{{n}}</strong></p>
+  <button @click="add">n+1</button>
+  <button @click="bye">销毁Vue</button>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      n: 0
+    },
+    methods: {
+      add() {
+        this.n++
+      },
+      bye() {
+        this.$destroy()
+      }
+    },
+    beforeDestroy() {
+      console.log('beforeDestroy')
+    },
+    destroyed() {
+      console.log('destroyed')
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Vue</title>
+</head>
+<body>
+<div id="app">
+  <h1>{{msg}}</h1>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  Vue.config.productionTip = false
+  const vm = new Vue({
+    data: {msg: 'Hello Vue'}
+  })
+  // 通过$mount()方法挂载容器
+  vm.$mount('#app')
+</script>
+</body>
+</html>

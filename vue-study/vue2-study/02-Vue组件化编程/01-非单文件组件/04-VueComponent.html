@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>VueComponent</title>
+</head>
+<body>
+<div id="app">
+  <!--使用组件-->
+  <company></company>
+  <Employee></Employee>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  const company = Vue.extend({
+    template: `
+      <div>
+      <p>公司名称：{{ companyName }}</p>
+      <p>公司地址：{{ address }}</p>
+      </div>
+    `,
+    data() {
+      return {
+        companyName: '虹软科技有限公司',
+        address: '虹软科技园'
+      }
+    }
+  })
+
+  const Employee = Vue.extend({
+    name: 'Employee',
+    template: `
+      <div>
+      <p>员工职位：{{ position }}</p>
+      <p>员工姓名：{{ name }}</p>
+      </div>
+    `,
+    data() {
+      return {
+        position: '前端开发工程师',
+        name: 'YuHuo'
+      }
+    }
+  })
+
+  new Vue({
+    el: '#app',
+    // 局部注册组件
+    components: {
+      company,
+      Employee
+    }
+  })
+
+  console.log(company)
+  console.log(Employee)
+</script>
+</body>
+</html>

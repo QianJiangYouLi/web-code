@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>挂载流程</title>
+</head>
+<body>
+<div id="app">
+  <p>当前N值：<strong>{{n}}</strong></p>
+  <button @click="add">n+1</button>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      n: 0
+    },
+    methods: {
+      add() {
+        this.n++
+      }
+    },
+    beforeCreate() {
+      console.log('beforeCreate')
+      // console.log(this)
+      // debugger;
+    },
+    created() {
+      console.log('created')
+      // console.log(this)
+      // debugger;
+    },
+    beforeMount() {
+      console.log('beforeMount')
+    },
+    mounted() {
+      console.log('mounted')
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>引出生命周期</title>
+</head>
+<body>
+<div id="app">
+  <h2 :style="{opacity}">Hello Vue</h2>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      opacity: 1
+    },
+    // Vue完成模板解析，把初始真实DOM元素放入页面后（挂载完毕）调用
+    mounted() {
+      setInterval(() => {
+        this.opacity -= 0.01
+        if (this.opacity <= 0) this.opacity = 1
+      }, 16)
+    }
+  })
+  // 通过外部定时器实现，不推荐这种写法
+  /*
+  setInterval(() => {
+     vm.opacity -= 0.01
+     if (vm.opacity <= 0) vm.opacity = 1
+   }, 16)
+   */
+</script>
+</body>
+</html>

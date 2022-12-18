@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>事件的基本使用</title>
+</head>
+<body>
+<div id="app">
+  <p>Hello {{name}},Welcome to hangzhou </p>
+  <!--事件绑定 v-on:事件名="事件回调"-->
+  <p><button v-on:click="showInfo1">clink this</button></p>
+  <!--  事件绑定简写：@事件名="事件回调"-->
+  <p><button @click="showInfo2(666,$event)">clink this</button></p>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      name: 'YuHuo'
+    },
+    methods: {
+      showInfo1(event) {
+        console.log(event)
+        console.log('哈哈')
+      },
+      showInfo2(a, event) {
+        console.log(event)
+        console.log(a)
+      }
+    }
+  })
+</script>
+</body>
+</html>

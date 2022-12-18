@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>key的原理与作用</title>
+</head>
+<body>
+<div id="app">
+  <h2>人员列表</h2>
+  <ul>
+    <!--<li v-for="(person,index) in personList" :key="index">-->
+    <li v-for="(person,index) in personList" :key="person.id">
+      {{person.name}}----{{person.age}}----<input type="text">
+    </li>
+  </ul>
+  <button @click="add">添加人员</button>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      personList: [
+        {id: '001', name: 'YuHuo', age: 24},
+        {id: '002', name: 'SuBai', age: 22},
+        {id: '003', name: 'QiuWen', age: 21}
+      ]
+    },
+    methods: {
+      add() {
+        const person = {
+          id: '004',
+          name: 'CuiLuoHeng',
+          age: 20
+        }
+        this.personList.unshift(person)
+      }
+    }
+  })
+</script>
+</body>
+</html>

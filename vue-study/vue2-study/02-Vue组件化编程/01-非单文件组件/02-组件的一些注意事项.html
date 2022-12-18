@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>组件的一些注意事项</title>
+</head>
+<body>
+<div id="app">
+  <Company></Company>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  const Company = {
+    name:'虹软',
+    template: `
+      <div>
+       <p>公司名称：{{ companyName }}</p>
+       <p>公司地址：{{ address }}</p>
+      </div>
+    `,
+    data() {
+      return {
+        companyName: '虹软科技有限公司',
+        address: '虹软科技园'
+      }
+    }
+  }
+
+  new Vue({
+    el: '#app',
+    components: {
+      Company
+    }
+  })
+</script>
+</body>
+</html>

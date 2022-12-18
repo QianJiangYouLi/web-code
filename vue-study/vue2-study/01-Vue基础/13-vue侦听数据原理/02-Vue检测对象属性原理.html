@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue监测对象属性原理</title>
+</head>
+<body>
+<div id="app">
+  <h3>姓名：{{name}}</h3>
+  <h3>年龄：{{age}}</h3>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  const vm = new Vue({
+    el: '#app',
+    data: {
+      name: 'YuHuo',
+      age: 24,
+      job: {
+        position: '前端开发工程师'
+      }
+    }
+  })
+</script>
+</body>
+</html>

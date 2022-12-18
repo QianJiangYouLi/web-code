@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>姓名案例-methods实现</title>
+</head>
+<body>
+<div id="app">
+  <p><label>姓：<input type="text" v-model="firstName"></label></p>
+  <p><label>名：<input type="text" v-model="lastName"></label></p>
+  <p>全名：<strong>{{fullName()}}</strong></p>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      firstName: '',
+      lastName: ''
+    },
+    methods: {
+      fullName() {
+        return `${this.firstName} - ${this.lastName} `
+      }
+    }
+  })
+</script>
+</body>
+</html>

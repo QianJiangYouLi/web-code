@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>v-show条件渲染</title>
+</head>
+<body>
+<div id="app">
+  <button @click="n++">a++</button>
+  <div v-show="n===1">Angular</div>
+  <div v-show="n===2">React</div>
+  <div v-show="n===3">Vue</div>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+     n:0
+    }
+  })
+</script>
+</body>
+</html>

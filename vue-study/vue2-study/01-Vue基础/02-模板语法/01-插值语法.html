@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>插值语法</title>
+</head>
+<body>
+<div id="app">
+  <!-- 插值语法-->
+  <h1>{{ msg }}</h1>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  Vue.config.productionTip = false
+  new Vue({
+    el: '#app',
+    data: {
+      msg: 'Hello Vue'
+    }
+  })
+</script>
+</body>
+</html>

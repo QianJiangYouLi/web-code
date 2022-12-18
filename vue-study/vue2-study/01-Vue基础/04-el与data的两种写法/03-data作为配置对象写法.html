@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Vue</title>
+</head>
+<body>
+<div id="app">
+  <h1>{{msg}}</h1>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  Vue.config.productionTip = false
+  // 写法1：data以对象形式写在Vue实例对象中
+  new Vue({
+    el: '#app',
+    data: {msg: 'Hello Vue'}
+  })
+</script>
+</body>
+</html>

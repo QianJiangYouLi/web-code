@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>理解数据代理</title>
+</head>
+<body>
+<script>
+  const objX = {x: 100}
+  const objY = {y: 100}
+  Object.defineProperty(objY, 'x', {
+    get() {
+      return objX.x
+    },
+    set(v) {
+      objX.x = v
+    }
+  })
+</script>
+</body>
+</html>

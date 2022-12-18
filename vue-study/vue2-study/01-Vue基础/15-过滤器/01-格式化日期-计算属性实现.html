@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>格式化日期计算属性实现</title>
+</head>
+<body>
+<div id="app">
+  <p>显示格式化后的时间：<strong>{{fmtTime}}</strong></p>
+</div>
+<script src="../../lib/vue.js"></script>
+<script src="../../lib/day.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      time: Date.now()
+    },
+    computed: {
+      fmtTime() {
+        return dayjs(this.time).format('YYYY年MM月DD日 HH:mm:ss')
+      }
+    }
+  })
+</script>
+</body>
+</html>

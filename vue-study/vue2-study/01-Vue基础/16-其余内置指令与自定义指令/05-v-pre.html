@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>v-pre指令</title>
+</head>
+<body>
+<div id="app">
+  <h2 v-pre>Vue</h2>
+  <p v-pre>当前N值：{{n}}</p>
+  <button @click="n++" v-pre>n+1</button>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      n: 1
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>v-cloak指令</title>
+  <style>
+      [v-clock] {
+          display: none;
+      }
+  </style>
+</head>
+<body>
+<div id="app">
+  <p v-cloak>{{name}}</p>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      name: '苏白'
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"bookname": "三国演义",
+		"author": "罗贯中",
+		"publisher": "武汉人民出版社"
+	},
+	{
+		"id": 2,
+		"bookname": "水浒传",
+		"author": "施耐庵",
+		"publisher": "北京人民出版社"
+	},
+	{
+		"bookname": "退出体育圈后我成了厨神",
+		"author": "亡灵大白菜",
+		"publisher": "晋江文学城",
+		"id": 6
+	},
+	{
+		"bookname": "退出娱乐圈后我成了大明星",
+		"author": "亡灵大白菜",
+		"publisher": "晋江文学城",
+		"id": 7
+	}
+]

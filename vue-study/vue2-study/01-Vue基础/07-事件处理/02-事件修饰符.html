@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>事件修饰符</title>
+</head>
+<body>
+<div id="app">
+  <p>Hello {{name}},Welcome to hangzhou </p>
+  <!--  事件修饰符，prevent阻止事件默认行为-->
+  <p><a href="https://www.google.com" @click.prevent="showInfo">点我提示信息</a></p>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {name: 'YuHuo'},
+    methods: {
+      showInfo(e) {
+        // e.preventDefault() 阻止默认事件，在Vue中可以用事件修饰符实现
+        alert(this.name)
+      }
+    }
+  })
+</script>
+</body>
+</html>

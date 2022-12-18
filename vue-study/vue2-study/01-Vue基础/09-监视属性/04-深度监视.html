@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>深度监视</title>
+</head>
+<body>
+<div id="app">
+  <div>
+    <p>a的值：{{numbers.a}}</p>
+    <button @click="numbers.a++">a++</button>
+  </div>
+  <div>
+    <p>b的值：{{numbers.b}}</p>
+    <button @click="numbers.b++">b++</button>
+  </div>
+  <p><button @click="numbers={a:666,b:999}">替换numbers</button></p>
+</div>
+<script src="../../lib/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      numbers: {
+        a: 1,
+        b: 2
+      }
+    },
+    watch: {
+      // 监视多级结构中某个属性的变化
+      /*'numbers.a': {
+        handler() {
+          console.log('a改变了')
+        }
+      }*/
+      // 监视多级结构中所有属性的变化
+      numbers:{
+        deep:true,
+        handler(){
+          console.log('numbers改变了')
+        }
+      }
+    }
+  })
+</script>
+</body>
+</html>

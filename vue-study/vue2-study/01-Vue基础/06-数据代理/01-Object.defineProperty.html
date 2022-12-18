@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Object.defineProperty</title>
+</head>
+<body>
+<script>
+  let num = 24
+  const person = {
+    name: 'YuHuo',
+    gender: 'male'
+  }
+  Object.defineProperty(person, 'age', {
+    // value: 24,
+    // enumerable: true, // 控制属性是否可枚举，默认false
+    // writable: true, //  控制属性是否可被修改，默认false
+    // configurable: true, // 控制属性是否可被删除，默认false
+    get() { // 读取age时,getter被调用，返回值就是age的值
+      return num
+    },
+    set(v) { // 当修改了age时，setter会被调用，且会收到修改的具体值
+      num = v
+    }
+  })
+  console.log(Object.keys(person))
+  console.log(person)
+</script>
+</body>
+</html>
