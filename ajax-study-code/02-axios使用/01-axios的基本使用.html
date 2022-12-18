@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<title>axios的基本使用</title>
+</head>
+<body>
+<button class="btn1">基本使用</button>
+<button class="btn2">点我发送get请求</button>
+<button class="btn3">点我发送post请求</button>
+<!-- 引入axios库 -->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/1.0.0-alpha.1/axios.js"></script>
+<script>
+	// 基本使用
+	document.querySelector('.btn1').addEventListener('click', function () {
+		/**
+		 * get():发送get请求，参数是url,参数
+		 * then()：成功回调
+		 *   res是包装的数据，里面包含很多的内容：请求头、请求配置、请求xhr对象、服务器数据等
+		 *   res.data才是服务器响应的数据，相当于原生的xhr.responseText
+		 * catch()：错误回调
+		 *  err是错误对象
+		 */
+		axios
+		.get('https://autumnfish.cn/api/joke/list?num=10')
+		.then(res => console.log(res.data))
+		.catch(err => console.log(err))
+		.then(() => console.log('请求完成')) // 这个then无论请求成功还是失败都会执行
+	})
+	// 发送get请求
+	document.querySelector('.btn2').addEventListener('click', function () {
+		/**
+		 * get方法的要传递参数可以通过?参数名=参数值的方式传递，也可以通过指定get()的参数2传递，类型是对象
+		 */
+		axios.get('https://autumnfish.cn/api/joke/list?num=5').then(({data}) => {
+			console.log(data)
+		})
+	})
+	// 发送post请求
+	document.querySelector('.btn3').addEventListener('click', function () {
+		/**
+		 * post()的方式和get类似，只是参数传递必须是参数对象，不能直接在地址后面拼
+		 */
+		axios
+		.post('http://www.liulongbin.top:3009/api/login', {username: 'admin', password: '123456'})
+		.then(({data}) => {
+			console.log(data)
+		})
+	})
+</script>
+</body>
+</html>
